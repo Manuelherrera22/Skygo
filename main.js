@@ -1,118 +1,99 @@
-/* ========================================
-   SKYGO — Main JS
-   ======================================== */
+import './style.css';
 
-// --- Particles ---
-function createParticles() {
-  const container = document.getElementById('hero-particles');
-  if (!container) return;
-  for (let i = 0; i < 40; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.animationDelay = Math.random() * 8 + 's';
-    p.style.animationDuration = (6 + Math.random() * 6) + 's';
-    p.style.width = p.style.height = (1.5 + Math.random() * 3) + 'px';
-    p.style.opacity = 0.1 + Math.random() * 0.4;
-    container.appendChild(p);
-  }
-}
-
-// --- Navbar scroll ---
-function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  const toggle = document.getElementById('nav-toggle');
-  const links = document.getElementById('nav-links');
-
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  toggle?.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    links.classList.toggle('open');
-  });
-
-  // Close mobile menu on link click
-  links?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
-    });
-  });
-}
-
-// --- Reveal on scroll ---
-function initReveal() {
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  reveals.forEach(el => observer.observe(el));
-}
-
-// --- Counter animation ---
-function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.count);
-      const duration = 1800;
-      const start = performance.now();
-
-      function tick(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(target * eased);
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(el => observer.observe(el));
-}
-
-// --- Form ---
-function initForm() {
-  const form = document.getElementById('contact-form');
-  const toast = document.getElementById('toast');
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Show toast
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4000);
-    form.reset();
-  });
-}
-
-// --- Smooth scroll ---
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-}
-
-// --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
-  createParticles();
-  initNavbar();
-  initReveal();
-  initCounters();
-  initForm();
-  initSmoothScroll();
+
+  // ═══════════════════════════════════════
+  // 1. CUSTOM CURSOR
+  // ═══════════════════════════════════════
+  const dot = document.querySelector('.cursor-dot');
+  const ring = document.querySelector('.cursor-ring');
+
+  if (dot && ring && window.innerWidth > 900) {
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+    });
+
+    // Smooth ring follow
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Hover states
+    const hoverTargets = document.querySelectorAll('a, button, .vert-card, .mem-card, .nav-cta');
+    hoverTargets.forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+  }
+
+  // ═══════════════════════════════════════
+  // 2. SCROLL ANIMATIONS (IntersectionObserver)
+  // ═══════════════════════════════════════
+  const animElements = document.querySelectorAll('.anim-up');
+  const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  animElements.forEach(el => animObserver.observe(el));
+
+  // ═══════════════════════════════════════
+  // 3. NAV SCROLL STATE
+  // ═══════════════════════════════════════
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // ═══════════════════════════════════════
+  // 4. PARALLAX HERO VIDEO (subtle)
+  // ═══════════════════════════════════════
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    window.addEventListener('scroll', () => {
+      const scroll = window.scrollY;
+      if (scroll < window.innerHeight) {
+        heroVideo.style.transform = `translate(-50%, -50%) scale(${1.05 + scroll * 0.0002})`;
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════
+  // 5. TILT EFFECT ON MEMBERSHIP CARDS
+  // ═══════════════════════════════════════
+  const memCards = document.querySelectorAll('.mem-card');
+  memCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
+      card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0)';
+    });
+  });
 });

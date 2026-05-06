@@ -3,396 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkyGo — Membresía Premium | Viajes, Salud, Gastronomía y Lujo en Colombia</title>
-  <meta name="description" content="Accede a descuentos exclusivos de 5% a 25% en viajes, salud, gastronomía y lujo. Membresía premium con red curada de aliados en Colombia.">
-  <meta name="keywords" content="SkyGo, membresía Colombia, viajes Colombia, turismo salud, descuentos premium">
-  <meta property="og:title" content="SkyGo — Tu Membresía Premium en Colombia">
-  <meta property="og:description" content="Red curada de aliados con descuentos exclusivos en viajes, salud, gastronomía y lujo.">
-  <meta property="og:type" content="website">
+  <title>SkyGo — The Ultimate Lifestyle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-brand">
-        <span class="brand-icon">✦</span>
-        <span class="brand-text">Sky<span class="brand-accent">Go</span></span>
-      </a>
-      <div class="nav-links" id="nav-links">
-        <a href="#verticales" class="nav-link">Verticales</a>
-        <a href="#membresia" class="nav-link">Membresía</a>
-        <a href="#colombia" class="nav-link">Colombia</a>
-        <a href="#aliados" class="nav-link">Aliados</a>
-        <a href="#contacto" class="nav-cta">Únete Ahora</a>
-      </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- CURSOR -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- NAVIGATION -->
+  <nav id="mainNav">
+    <div class="nav-logo">Sky<em>Go</em></div>
+    <ul class="nav-links">
+      <li><a href="#verticals">Ecosistema</a></li>
+      <li><a href="#process">Cómo Funciona</a></li>
+      <li><a href="#network">La Red</a></li>
+      <li><a href="#membership">Membresía</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta">Acceso Privado</a>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <div class="hero-gradient"></div>
-      <div class="hero-particles" id="hero-particles"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge reveal">Membresía Premium Colombia</div>
-      <h1 class="hero-title reveal">
-        <span class="hero-line">Vive Colombia</span>
-        <span class="hero-line accent">sin límites.</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_24fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-inner">
+      <p class="hero-eyebrow anim-up">Colombia's Private Luxury Ecosystem</p>
+      <h1 class="hero-headline anim-up d1">
+        <span class="line">Vive</span>
+        <span class="line accent">Colombia.</span>
       </h1>
-      <p class="hero-subtitle reveal">Accede a una red exclusiva de viajes, salud, gastronomía y lujo con descuentos de hasta <strong>25%</strong> por debajo del mercado.</p>
-      <div class="hero-actions reveal">
-        <a href="#membresia" class="btn btn-primary">Explorar Membresía</a>
-        <a href="#verticales" class="btn btn-ghost">Conocer Más</a>
-      </div>
-      <div class="hero-stats reveal">
-        <div class="hero-stat">
-          <span class="hero-stat-number" data-count="200">0</span><span class="hero-stat-suffix">+</span>
-          <span class="hero-stat-label">Aliados Premium</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-number" data-count="25">0</span><span class="hero-stat-suffix">%</span>
-          <span class="hero-stat-label">Descuento máximo</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-number" data-count="4">0</span>
-          <span class="hero-stat-label">Verticales</span>
-        </div>
-      </div>
+      <p class="hero-sub anim-up d2">Viajes · Salud · Gastronomía · Bienestar<br>Todo en un solo acceso privado.</p>
+      <a href="#verticals" class="hero-arrow anim-up d3">
+        <span>Descubrir</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+    <!-- Floating Stats -->
+    <div class="hero-stats anim-up d3">
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Verticales</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">25%</span><span class="stat-label">Bajo Mercado</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Partners</span></div>
     </div>
   </section>
 
-  <!-- ===== VERTICALES ===== -->
-  <section class="section section-dark" id="verticales">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Ecosistema</span>
-        <h2 class="section-title">Cuatro verticales,<br><span class="text-gradient">un solo acceso.</span></h2>
-        <p class="section-desc">Cada vertical conecta con aliados curados que garantizan calidad, precio y experiencia.</p>
-      </div>
-      <div class="verticals-grid">
-
-        <div class="vertical-card reveal" data-vertical="trips">
-          <div class="vertical-icon">✈</div>
-          <div class="vertical-tag">Trips</div>
-          <h3 class="vertical-title">Viajes & Turismo</h3>
-          <p class="vertical-desc">Hoteles, glampings, Airbnb y paquetes nacionales e internacionales. Tarifas entre 5% y 25% por debajo de agencias tradicionales.</p>
-          <ul class="vertical-features">
-            <li>Destinos nacionales e internacionales</li>
-            <li>Hoteles, glampings y experiencias</li>
-            <li>Paquetes integrales personalizados</li>
-          </ul>
-          <div class="vertical-discount">Hasta <strong>25%</strong> menos</div>
-        </div>
-
-        <div class="vertical-card reveal" data-vertical="health">
-          <div class="vertical-icon">♥</div>
-          <div class="vertical-tag">Health</div>
-          <h3 class="vertical-title">Salud & Bienestar</h3>
-          <p class="vertical-desc">Clínicas, especialistas y centros estéticos de alto nivel. Turismo de salud con estándares internacionales.</p>
-          <ul class="vertical-features">
-            <li>Clínicas y especialistas verificados</li>
-            <li>Procedimientos estéticos premium</li>
-            <li>Turismo de salud integral</li>
-          </ul>
-          <div class="vertical-discount">Convenios <strong>exclusivos</strong></div>
-        </div>
-
-        <div class="vertical-card reveal" data-vertical="living">
-          <div class="vertical-icon">◆</div>
-          <div class="vertical-tag">Living</div>
-          <h3 class="vertical-title">Gastronomía & Ocio</h3>
-          <p class="vertical-desc">Los mejores restaurantes, experiencias gastronómicas y entretenimiento en la red curada de SkyGo.</p>
-          <ul class="vertical-features">
-            <li>Restaurantes de alta cocina</li>
-            <li>Experiencias gastronómicas únicas</li>
-            <li>Ocio y entretenimiento premium</li>
-          </ul>
-          <div class="vertical-discount">Acceso <strong>preferente</strong></div>
-        </div>
-
-        <div class="vertical-card reveal" data-vertical="luxury">
-          <div class="vertical-icon">★</div>
-          <div class="vertical-tag">Luxury</div>
-          <h3 class="vertical-title">Cuidado Personal & Fitness</h3>
-          <p class="vertical-desc">Centros de fitness, spas, cuidado personal y bienestar. Tu mejor versión con beneficios exclusivos.</p>
-          <ul class="vertical-features">
-            <li>Spas y centros de bienestar</li>
-            <li>Fitness y entrenamiento premium</li>
-            <li>Cuidado personal de alto nivel</li>
-          </ul>
-          <div class="vertical-discount">Beneficios <strong>VIP</strong></div>
-        </div>
-
-      </div>
+  <!-- MARQUEE SOCIAL PROOF -->
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <span>+2,500 Miembros Activos</span><span class="dot">✦</span>
+      <span>120+ Partners Exclusivos</span><span class="dot">✦</span>
+      <span>$500M+ COP en Comisiones Repartidas</span><span class="dot">✦</span>
+      <span>+2,500 Miembros Activos</span><span class="dot">✦</span>
+      <span>120+ Partners Exclusivos</span><span class="dot">✦</span>
+      <span>$500M+ COP en Comisiones Repartidas</span><span class="dot">✦</span>
+      <span>+2,500 Miembros Activos</span><span class="dot">✦</span>
+      <span>120+ Partners Exclusivos</span><span class="dot">✦</span>
+      <span>$500M+ COP en Comisiones Repartidas</span><span class="dot">✦</span>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== MEMBRESÍA ===== -->
-  <section class="section" id="membresia">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Membresía</span>
-        <h2 class="section-title">Dos caminos,<br><span class="text-gradient">un mismo cielo.</span></h2>
-        <p class="section-desc">Elige el perfil que mejor se adapte a tu visión: accede a beneficios exclusivos o participa del crecimiento.</p>
-      </div>
-      <div class="membership-grid">
-
-        <div class="membership-card reveal" id="card-afiliado">
-          <div class="membership-badge">Afiliado</div>
-          <div class="membership-price">
-            <span class="price-currency">COP</span>
-            <span class="price-amount">2.500.000</span>
-            <span class="price-period">/ 2 años</span>
-          </div>
-          <p class="membership-desc">Acceso completo a beneficios, descuentos y experiencias en las 4 verticales.</p>
-          <ul class="membership-features">
-            <li><span class="check">✓</span> Descuentos 5-25% en viajes</li>
-            <li><span class="check">✓</span> Convenios en salud y bienestar</li>
-            <li><span class="check">✓</span> Acceso a gastronomía y ocio</li>
-            <li><span class="check">✓</span> Beneficios en cuidado personal</li>
-            <li><span class="check">✓</span> Código de afiliado para referir y ganar</li>
-            <li><span class="check">✓</span> Arbitraje de descuentos</li>
-            <li><span class="check dim">—</span> <span class="dim">Mejores márgenes de comisión</span></li>
-            <li><span class="check dim">—</span> <span class="dim">Rendimientos por crecimiento</span></li>
-            <li><span class="check dim">—</span> <span class="dim">Integración de comercios</span></li>
-          </ul>
-          <a href="#contacto" class="btn btn-outline-light">Quiero ser Afiliado</a>
-        </div>
-
-        <div class="membership-card featured reveal" id="card-socio">
-          <div class="membership-popular">Recomendado</div>
-          <div class="membership-badge">Socio</div>
-          <div class="membership-price">
-            <span class="price-currency">Inversión</span>
-            <span class="price-amount">Personalizada</span>
-            <span class="price-period">consultar</span>
-          </div>
-          <p class="membership-desc">Invierte en el proyecto. Mejores comisiones, rendimientos y oportunidades de expansión.</p>
-          <ul class="membership-features">
-            <li><span class="check">✓</span> Todo lo del Afiliado</li>
-            <li><span class="check gold">✦</span> Comisiones superiores por tu red de referidos</li>
-            <li><span class="check gold">✦</span> Rendimientos por crecimiento</li>
-            <li><span class="check gold">✦</span> Integración de comercios propios</li>
-            <li><span class="check gold">✦</span> Mayor exposición como fundador</li>
-            <li><span class="check gold">✦</span> Ventajas en expansión territorial</li>
-            <li><span class="check gold">✦</span> Acceso a campañas especiales</li>
-            <li><span class="check gold">✦</span> Participación en decisiones clave</li>
-          </ul>
-          <a href="#contacto" class="btn btn-primary">Quiero ser Socio</a>
-        </div>
-
-      </div>
-
-      <div class="arbitrage-box reveal">
-        <div class="arbitrage-icon">🚀</div>
-        <h3>Recupera tu inversión en tu primer viaje</h3>
-        <p>Sin matemáticas complejas: gracias a nuestros convenios directos, el ahorro generado en un solo viaje internacional o tratamiento médico de alto nivel <strong>suele superar el costo total de la membresía</strong>.</p>
-      </div>
+  <!-- VERTICALS -->
+  <section id="verticals" class="verticals">
+    <div class="section-header anim-up">
+      <span class="section-tag">01 — La Experiencia</span>
+      <h2 class="section-title">Cuatro verticales.<br><em>Un ecosistema.</em></h2>
     </div>
-  </section>
 
-  <!-- ===== COLOMBIA ===== -->
-  <section class="section section-colombia" id="colombia">
-    <div class="colombia-bg"></div>
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Potencial</span>
-        <h2 class="section-title">Colombia:<br><span class="text-gradient">El destino que el mundo busca.</span></h2>
-        <p class="section-desc">Alta biodiversidad, costos competitivos y calidad creciente. SkyGo posiciona a Colombia como destino integral de clase mundial.</p>
-      </div>
-      <div class="colombia-grid">
-        <div class="colombia-card reveal">
-          <div class="colombia-card-icon">🏖</div>
-          <h3>Playa & Costa</h3>
-          <p>Cartagena, Santa Marta, San Andrés. Experiencias costeras con estándares premium.</p>
-        </div>
-        <div class="colombia-card reveal">
-          <div class="colombia-card-icon">⛰</div>
-          <h3>Montaña & Café</h3>
-          <p>Eje Cafetero, Villa de Leyva, Ibagué. Naturaleza, cultura y gastronomía de altura.</p>
-        </div>
-        <div class="colombia-card reveal">
-          <div class="colombia-card-icon">🌿</div>
-          <h3>Selva & Aventura</h3>
-          <p>Amazonas, Caño Cristales, Guaviare. Biodiversidad única e inmersiones naturales.</p>
-        </div>
-        <div class="colombia-card reveal">
-          <div class="colombia-card-icon">🏥</div>
-          <h3>Turismo de Salud</h3>
-          <p>Procedimientos médicos y estéticos de calidad a menor costo, con ecosistema integral de recuperación.</p>
+    <div class="vert-grid">
+      <!-- TRIPS -->
+      <div class="vert-card anim-up" style="--bg: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80')">
+        <div class="vert-card-inner">
+          <span class="vert-num">01</span>
+          <h3 class="vert-name">Trips</h3>
+          <p class="vert-desc">Tarifas 5%–25% por debajo del mercado en hotelería de alto nivel, glampings y experiencias exclusivas.</p>
+          <span class="vert-cta">Explorar →</span>
         </div>
       </div>
-      <div class="colombia-highlight reveal">
-        <p>Paquetes integrales que combinan <strong>alojamiento + transporte + gastronomía + actividades</strong> — experiencias personalizadas dirigidas a mercados internacionales.</p>
+      <!-- HEALTH -->
+      <div class="vert-card anim-up" style="--bg: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80')">
+        <div class="vert-card-inner">
+          <span class="vert-num">02</span>
+          <h3 class="vert-name">Health</h3>
+          <p class="vert-desc">Turismo de salud con estándares internacionales. Clínicas y especialistas exclusivos en una red curada.</p>
+          <span class="vert-cta">Explorar →</span>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== ALIADOS ===== -->
-  <section class="section section-dark" id="aliados">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Red de Aliados</span>
-        <h2 class="section-title">Tu comercio,<br><span class="text-gradient">nuestra plataforma.</span></h2>
-        <p class="section-desc">SkyGo centraliza la demanda y posiciona a los mejores aliados con mayor visibilidad y clientes recurrentes.</p>
+      <!-- LIVING -->
+      <div class="vert-card anim-up" style="--bg: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80')">
+        <div class="vert-card-inner">
+          <span class="vert-num">03</span>
+          <h3 class="vert-name">Living</h3>
+          <p class="vert-desc">Alta cocina y entretenimiento. Reservas prioritarias en los restaurantes más codiciados de Colombia.</p>
+          <span class="vert-cta">Explorar →</span>
+        </div>
       </div>
-      <div class="allies-grid">
-        <div class="ally-benefit reveal">
-          <div class="ally-number">01</div>
-          <h3>Mayor Visibilidad</h3>
-          <p>Exposición directa a una base de afiliados premium que buscan servicios de calidad.</p>
-        </div>
-        <div class="ally-benefit reveal">
-          <div class="ally-number">02</div>
-          <h3>Clientes Recurrentes</h3>
-          <p>Adquisición de clientes estructurada sin costo de marketing para tu negocio.</p>
-        </div>
-        <div class="ally-benefit reveal">
-          <div class="ally-number">03</div>
-          <h3>Marketing Integrado</h3>
-          <p>Campañas, contenido y posicionamiento digital gestionados por SkyGo.</p>
-        </div>
-        <div class="ally-benefit reveal">
-          <div class="ally-number">04</div>
-          <h3>Datos & Analítica</h3>
-          <p>Insights sobre comportamiento, preferencias y tendencias de tus clientes.</p>
+      <!-- LUXURY -->
+      <div class="vert-card anim-up" style="--bg: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80')">
+        <div class="vert-card-inner">
+          <span class="vert-num">04</span>
+          <h3 class="vert-name">Luxury</h3>
+          <p class="vert-desc">Spas, cuidado personal y fitness premium. Exclusividad para quienes exigen absolutamente lo mejor.</p>
+          <span class="vert-cta">Explorar →</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== ROADMAP ===== -->
-  <section class="section" id="roadmap">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">Crecimiento</span>
-        <h2 class="section-title">De Ibagué<br><span class="text-gradient">al mundo.</span></h2>
+  <!-- HOW IT WORKS -->
+  <section id="process" class="process">
+    <div class="section-header anim-up">
+      <span class="section-tag">02 — El Proceso</span>
+      <h2 class="section-title">Acceso en<br><em>tres pasos.</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step anim-up">
+        <div class="step-num">01</div>
+        <h4 class="step-name">Aplica</h4>
+        <p class="step-desc">Completa tu solicitud de membresía. Nuestro equipo evalúa cada perfil para garantizar la calidad y el estándar de nuestra red privada.</p>
       </div>
-      <div class="roadmap-timeline">
-        <div class="roadmap-step reveal">
-          <div class="roadmap-dot"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-phase">Fase 1</span>
-            <h3>Ibagué</h3>
-            <p>Lanzamiento con aliados locales en las 4 verticales. Validación del modelo y tracción inicial.</p>
-          </div>
-        </div>
-        <div class="roadmap-step reveal">
-          <div class="roadmap-dot"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-phase">Fase 2</span>
-            <h3>Expansión Regional</h3>
-            <p>Valle del Cauca, Huila y Eje Cafetero. Escalamiento de la red de aliados y base de afiliados.</p>
-          </div>
-        </div>
-        <div class="roadmap-step reveal">
-          <div class="roadmap-dot"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-phase">Fase 3</span>
-            <h3>Colombia Nacional</h3>
-            <p>Presencia en principales ciudades. App nativa, IA de recomendación y pricing dinámico.</p>
-          </div>
-        </div>
-        <div class="roadmap-step reveal">
-          <div class="roadmap-dot"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-phase">Fase 4</span>
-            <h3>Proyección Internacional</h3>
-            <p>Turismo inbound, paquetes para mercados internacionales y turismo de salud global.</p>
-          </div>
-        </div>
+      <div class="process-step anim-up d1">
+        <div class="step-num">02</div>
+        <h4 class="step-name">Desbloquea</h4>
+        <p class="step-desc">Recibe tu llave digital. Accede inmediatamente a todo el ecosistema con tarifas confidenciales que no encontrarás en ningún buscador público.</p>
+      </div>
+      <div class="process-step anim-up d2">
+        <div class="step-num">03</div>
+        <h4 class="step-name">Monetiza</h4>
+        <p class="step-desc">Comparte tu código de invitación exclusivo. Genera comisiones en efectivo por cada nuevo miembro que se una a través de tu recomendación.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CTA / CONTACTO ===== -->
-  <section class="section section-cta" id="contacto">
-    <div class="container">
-      <div class="cta-content reveal">
-        <span class="section-tag">Comienza Ahora</span>
-        <h2 class="cta-title">Tu acceso premium<br>a Colombia <span class="text-gradient">comienza aquí.</span></h2>
-        <p class="cta-desc">Déjanos tus datos y un asesor te contactará para encontrar el plan perfecto para ti.</p>
-        <form class="cta-form" id="contact-form">
-          <div class="form-row">
-            <input type="text" id="form-name" placeholder="Tu nombre" required>
-            <input type="email" id="form-email" placeholder="Email" required>
+  <!-- REFERRAL / VIRAL LOOP -->
+  <section id="network" class="referral">
+    <div class="referral-inner anim-up">
+      <div class="ref-content">
+        <span class="section-tag">03 — Crecimiento Viral</span>
+        <h2 class="section-title">Tu influencia<br><em>tiene valor.</em></h2>
+        <p class="ref-desc">En SkyGo no pagamos a agencias de marketing ni hacemos publicidad masiva. Todo nuestro presupuesto de crecimiento va directo a nuestros miembros. Si la red crece, tú ganas.</p>
+        <ul class="ref-benefits">
+          <li><strong>Comparte tu código:</strong> Cada miembro recibe un código único de invitación al ser aceptado.</li>
+          <li><strong>Gana comisiones:</strong> Recibe pagos directos en efectivo por cada membresía activada con tu código.</li>
+          <li><strong>Cero límites:</strong> Construye una fuente de ingresos recurrente solo por recomendar el estándar de vida que ya disfrutas.</li>
+        </ul>
+      </div>
+      <div class="ref-visual">
+        <div class="ref-card">
+          <div class="ref-card-header">Tu Panel de Control</div>
+          <div class="ref-code">SKY-7A9X2</div>
+          <div class="ref-stats">
+            <div class="r-stat"><span>Red Activa</span> 12 Miembros</div>
+            <div class="r-stat"><span>Comisiones</span> $3.5M COP</div>
           </div>
-          <div class="form-row">
-            <input type="tel" id="form-phone" placeholder="WhatsApp (con indicativo)" required>
-            <select id="form-interest" required>
-              <option value="" disabled selected>Me interesa ser...</option>
-              <option value="afiliado">Afiliado</option>
-              <option value="socio">Socio</option>
-              <option value="aliado">Comercio Aliado</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">Enviar Solicitud</button>
-        </form>
-        <div class="cta-alt">
-          <span>¿Prefieres contacto directo?</span>
-          <a href="https://wa.me/573001234567?text=Hola%2C%20quiero%20saber%20más%20sobre%20SkyGo" class="btn-whatsapp" target="_blank" rel="noopener">
-            <span class="wa-icon">💬</span> WhatsApp Directo
-          </a>
         </div>
+        <div class="ref-glow"></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- CINEMATIC BREAK -->
+  <section class="cinematic" style="background-image: url('https://images.unsplash.com/photo-1542314831-c6a4203251aa?auto=format&fit=crop&w=2000&q=80')">
+    <div class="cinematic-overlay"></div>
+    <div class="cinematic-inner anim-up">
+      <p class="cinematic-quote">"El verdadero lujo no es gastar más, es tener el acceso correcto."</p>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section id="membership" class="membership">
+    <div class="section-header anim-up">
+      <span class="section-tag">04 — Tu Camino</span>
+      <h2 class="section-title">Elige tu nivel.<br><em>Únete a la élite.</em></h2>
+    </div>
+
+    <div class="mem-grid">
+      <div class="mem-card mem-dark anim-up">
+        <div class="mem-card-glow"></div>
+        <span class="mem-badge">Para Usuarios Creadores</span>
+        <h3 class="mem-name">El Afiliado</h3>
+        <div class="mem-price">2.5M <span>COP / año</span></div>
+        <div class="mem-roi"><strong>💡 ROI Instantáneo:</strong> Recupera el costo de tu membresía ahorrando en la reserva de tu primer hotel o refiriendo a tus primeros 3 amigos.</div>
+        <ul class="mem-perks">
+          <li>Acceso total a las 4 verticales (Trips, Health, Living, Luxury)</li>
+          <li>Sistema de comisiones activo para invitar amigos</li>
+          <li>Descuentos de hasta 25% OFF reales vs Booking/Expedia</li>
+          <li>Soporte concierge prioritario vía WhatsApp</li>
+        </ul>
+        <a href="#" class="mem-btn">Solicitar Membresía</a>
+      </div>
+
+      <div class="mem-card mem-gold anim-up">
+        <div class="mem-card-glow gold-glow"></div>
+        <span class="mem-badge">Para Inversores & Negocios</span>
+        <h3 class="mem-name">El Socio</h3>
+        <div class="mem-price">B2B <span>Partnership</span></div>
+        <div class="mem-roi"><strong>📈 Escalabilidad:</strong> Estructura de comisiones VIP, acceso al fondo de inversión y posicionamiento de tu marca en nuestra red.</div>
+        <ul class="mem-perks">
+          <li>Comisiones superiores (Tier 2) por expansión de red</li>
+          <li>Rendimientos pasivos del fondo de inversión colectivo</li>
+          <li>Integra y promociona tu comercio/servicio a nuestra red élite</li>
+          <li>Acceso a deals inmobiliarios y rondas pre-lanzamiento</li>
+        </ul>
+        <a href="#" class="mem-btn mem-btn-gold">Agendar Reunión</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta" class="final-cta" style="background-image: url('https://images.unsplash.com/photo-1569335468827-3a1372332158?auto=format&fit=crop&w=2000&q=80')">
+    <div class="cinematic-overlay"></div>
+    <div class="final-inner anim-up">
+      <h2 class="final-headline">Eleva tu<br><em>estándar.</em></h2>
+      <p class="final-sub">Más de 2,500 miembros ya disfrutan del ecosistema. Los cupos son limitados.</p>
+      <a href="#" class="final-btn">Solicitar Invitación</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <span class="brand-icon">✦</span>
-          <span class="brand-text">Sky<span class="brand-accent">Go</span></span>
-          <p class="footer-tagline">Tu membresía premium en Colombia.</p>
-        </div>
-        <div class="footer-links">
-          <h4>Verticales</h4>
-          <a href="#verticales">Trips</a>
-          <a href="#verticales">Health</a>
-          <a href="#verticales">Living</a>
-          <a href="#verticales">Luxury</a>
-        </div>
-        <div class="footer-links">
-          <h4>Plataforma</h4>
-          <a href="#membresia">Membresía</a>
-          <a href="#aliados">Aliados</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-        <div class="footer-links">
-          <h4>Contacto</h4>
-          <a href="mailto:info@skygo.co">info@skygo.co</a>
-          <a href="#">Ibagué, Colombia</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 SkyGo. Todos los derechos reservados.</p>
-      </div>
+    <div class="footer-inner">
+      <div class="footer-brand">Sky<em>Go</em></div>
+      <p class="footer-copy">© 2026 SkyGo. Todos los derechos reservados. Colombia.</p>
     </div>
   </footer>
-
-  <!-- Success toast -->
-  <div class="toast" id="toast">
-    <span class="toast-icon">✓</span>
-    <span class="toast-text">¡Solicitud enviada! Te contactaremos pronto.</span>
-  </div>
 
   <script type="module" src="/main.js"></script>
 </body>
