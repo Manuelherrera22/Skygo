@@ -119,6 +119,7 @@ body.cursor-hover .cursor-ring { width: 70px; height: 70px; border-color: var(--
   text-align: center;
   max-width: 900px;
   padding: 0 20px;
+  margin-bottom: 80px; /* Prevent overlap with stats box */
 }
 .hero-eyebrow {
   font-size: .72rem; text-transform: uppercase; letter-spacing: 6px; font-weight: 400;
@@ -151,12 +152,12 @@ body.cursor-hover .cursor-ring { width: 70px; height: 70px; border-color: var(--
   font-size: .72rem; text-transform: uppercase; letter-spacing: 4px; color: var(--gold);
   transition: transform .3s;
 }
-.hero-arrow:hover { transform: translateY(5px); }
+.hero-arrow:hover { transform: translateY(5px) !important; }
 .hero-arrow svg { animation: float 2s ease-in-out infinite; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
 .hero-stats {
-  position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 50px; left: 0; right: 0; margin: 0 auto; width: max-content;
   z-index: 10;
   display: flex; align-items: center; gap: 40px;
   background: rgba(12,14,18,0.7);
@@ -562,7 +563,7 @@ body.cursor-hover .cursor-ring { width: 70px; height: 70px; border-color: var(--
   .hero-inner { padding: 0 15px; }
   .hero-headline { font-size: clamp(3.5rem, 15vw, 6rem); letter-spacing: -1px; }
   .hero-sub { margin-bottom: 30px; }
-  .hero-stats { flex-direction: column; gap: 15px; border-radius: 20px; padding: 25px; bottom: 20px; width: 90%; }
+  .hero-stats { flex-direction: column; gap: 15px; border-radius: 20px; padding: 25px; bottom: 20px; width: 90%; max-width: 400px; }
   .stat-divider { width: 80%; height: 1px; }
   
   .verticals, .process, .referral, .membership { padding: 80px 5vw; }
